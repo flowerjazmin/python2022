@@ -32,7 +32,7 @@ atlag=osszeg/len(szamok)
 print(atlag)
 
 #5. feladat: szöbeg tárolás
-szoveg= "dfjkl hadjk fhadjkhéa dfjghfékghfd jkghdf th dasbd sdasdf dsfdsf dsaf"
+szoveg= "dfjkl had? jk fhadjkh, éa dfjghfékghfd jkghdf; th dasbd sd! asdf dsfdsf dsaf."
 
 #6. betübekérés
 betu="qwe"
@@ -48,6 +48,15 @@ lista=szoveg.split(" ")
 lista.reverse()
 szoveg2=" ".join(lista)
 print(szoveg2)
+
+#9. írásjelek törlése
+jelek = "',.!?-:;"
+
+for i in range(len(jelek)):
+    szoveg = szoveg.replace(jelek[i],"")
+    
+print(szoveg)
+
 
 
 
