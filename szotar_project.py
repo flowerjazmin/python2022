@@ -42,7 +42,23 @@ def beolvas():
 
 
 def kerdez():
-    print(kerdesek)
+    valasztott=random.choice(kerdesek)
+    print("vlasztott", valasztott)
+    rossz=[]
+    for e in range(3):
+        temp=random.choice(kerdesek)
+        print(temp)
+        while temp not in rossz and temp!=valasztott:
+            rossz.append(temp)
+        print(rossz)
+
+
+
+    print("-"*40)
+    print("Mit jelent: "+ valasztott[0]+ "?")
+
+    rossz.append(valasztott)
+    print(rossz)
 
 
 beolvas()
