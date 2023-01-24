@@ -42,26 +42,53 @@ def beolvas():
 
 
 def kerdez():
-    random.seed(2)
     valasztott=random.choice(kerdesek)
-    print("valasztott", valasztott)
+    #print("valasztott", valasztott)
     rossz=[]
     for e in range(3):
         temp=random.choice(kerdesek)
-        print("temp", temp)
-        #ez teljesen rossz
-        while temp not in rossz and temp!=valasztott:
-            rossz.append(temp)
-        print("rossz",rossz)
+        #print("temp", temp)
+        while not (temp not in rossz and temp!=valasztott):
+            temp=random.choice(kerdesek)
+
+        rossz.append(temp)
+        #print("rossz",rossz)
 
 
 
     print("-"*40)
     print("Mit jelent: "+ valasztott[0]+ "?")
 
-    #rossz.append(valasztott)
+    rossz.append(valasztott)
     print(rossz)
+    #valaszbekeres
+    abc="abcdefghijklmnopqrstuvwxyz"
+    random.shuffle(rossz)
 
+    i=0
+    for e in rossz:
+        print(abc[i]+ ") " +e[1])
+        i+=1
+
+
+
+    valasz=input("Válasz: ")
+    hol=abc.index(valasz)
+    print(hol)
+    while hol>4:
+        try:
+            valasz=input("Válassz újra: ")
+            hol=abc.index(valasz)
+        except:
+            pass
+
+    
+
+    
+
+
+    
+    
 
 beolvas()
 kerdez()
