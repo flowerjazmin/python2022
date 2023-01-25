@@ -60,7 +60,6 @@ def kerdez():
     print("Mit jelent: "+ valasztott[0]+ "?")
 
     rossz.append(valasztott)
-    print(rossz)
     #valaszbekeres
     abc="abcdefghijklmnopqrstuvwxyz"
     random.shuffle(rossz)
@@ -73,14 +72,24 @@ def kerdez():
 
 
     valasz=input("Válasz: ")
-    hol=abc.index(valasz)
-    print(hol)
-    while hol>4:
+
+    hol=4
+    
+    while hol>=4:
         try:
-            valasz=input("Válassz újra: ")
-            hol=abc.index(valasz)
+            if valasz!="":
+                hol=abc.index(valasz)
         except:
-            pass
+            valasz=input("Válassz újra: ")
+        else:
+            if hol>=4:
+                valasz=input("Válassz újra: ")
+
+
+    if valasztott[0]==rossz[hol][0]:
+        print("Válaszod helyes! :D")
+    else:
+        print("Válaszod hibás! :c")
 
     
 
@@ -91,7 +100,11 @@ def kerdez():
     
 
 beolvas()
-kerdez()
+for i in range(10):
+    kerdez()
+
+
+
 #szavak=sokBeker()
 #filebaIr(szavak)
 
