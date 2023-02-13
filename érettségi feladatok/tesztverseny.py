@@ -1,11 +1,21 @@
-def pointSzamit(valasz,helyes):
+def pontSzamit(valasz,helyes):
     pont=0
     for sorszam,betu in enumerate(valasz):
-	if betu==helyes[sorszam]:
+        if betu==helyes[sorszam]:
             if sorszam<5:
                 pont+=3
             elif sorszam<10:
                 pont+=4
+            elif sorszam<14:
+                pont+=5
+            else:
+                pont+=6
+
+    return pont
+
+
+
+
 
 f=open("valaszok.txt")
 
@@ -70,7 +80,7 @@ print("A feladatra {0} fő, a versenyzők {1:.2%}-a adott helyes választ.".form
 f=open("pontok.txt","w")
 for e in valaszok:
     pont=pontSzamit(e[1],helyes)
-
+    f.write(e[0] + " " + str(pont) + "\n")
 
 
 f.close()
