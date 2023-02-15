@@ -96,7 +96,32 @@ csakPontok=set()
 for e in eredmenyek:
     csakPontok.add(e[0])
 
-print(list(csakPontok)[-3:])
+top3=list(csakPontok)[-3:]
+top3.sort()
+top3.reverse()
+
+for sorszam, i in enumerate(top3):
+    #print(i)
+    for e in eredmenyek:
+        if e[0]==i:
+            print("{} {} {}".format(sorszam+1, i, e[1]))
+
+
+
+
+#print(list(csakPontok)[-3:])
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
