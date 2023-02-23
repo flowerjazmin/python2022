@@ -1,5 +1,6 @@
 def ado(adosav, alapterulet):
     ar=0
+    alapterulet=int(alapterulet)
     if adosav=="A" :
         ar=int(arak[0])*alapterulet
     elif adosav=="B":
@@ -26,7 +27,7 @@ arak=hazak.pop(0)
 
 print("2. feladat. A mintában {} telek szerepel.".format(len(hazak)))
 
-adoszam=int(input("3. feladat. Egy tulajdonos adószáma: "))
+adoszam=input("3. feladat. Egy tulajdonos adószáma: ")
 
 tulajdonok=[]
 for e in hazak:
@@ -42,7 +43,43 @@ else:
 
 #print(ado("C", 120))
 
+#A kategória
 hazakA=[e for e in hazak if e[3]=="A"]
+
+#B kategória
+hazakB=[]
+for e in hazak:
+    if e[3]=="B":
+        hazakB.append(e)
+
+#C kategória
+hazakC=[]
+for e in hazak:
+    if e[3]=="C":
+        hazakC.append(e)
+
+for i in range(len(hazakA)):
+    hazakA[i].append(ado(hazakA[i][3], hazakA[i][4]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
