@@ -4,7 +4,8 @@ def oszlopVissza(hanyadik):
         oszlop.append(e[hanyadik-1])
     return oszlop
 
-
+def oszthato(oszto):
+    return [e[oszto-1::oszto] for e in tabla]
 
 
 
@@ -139,10 +140,10 @@ print(oszlop)
 #hánnyal osztható oszlopokat adjon vissza
 #bekérés, annyival osztható oszlopok kiíratása
 
+print(oszthato(int(input("Kérek egy osztót: "))))
 
-
-
-
+oszlop=[[e[2],e[6],e[0]] for e in tabla]
+print(oszlop)
 
 
 
